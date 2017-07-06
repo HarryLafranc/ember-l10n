@@ -309,7 +309,9 @@ export default Service.extend(Evented, {
         }
       }
 
-      locale = locale.substr(0, 2);
+      if(locale){ locale = locale.substr(0, 2); }
+      else{ locale = defaultLocale ? defaultLocale : "en"; }
+      
     } else {
       locale = forceLocale;
     }
